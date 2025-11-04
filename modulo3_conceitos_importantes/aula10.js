@@ -1,22 +1,22 @@
-//aula: ciclo de vida de testes com k6
-
-//1. inicialização
+// Inicialização do script de teste de carga usando k6
 import sleep from 'k6';
 
-
-//2. configuração
+// Configuração do teste: 1 usuário virtual (VU) por 10 segundos
 export const options = {
     vus: 1,
     duration: '10s'
 }
 
-//3. execução // codigo vu
-export default function(){
-    console.log("testando o k6");
+// Executa a função principal do teste
+
+export default function () {
+    console.log('Hello, World!');
     sleep(1);
 }
 
-//4. desmontagem
-export function teardown(data){
+
+// Desmontagem do script
+export function teardown(data) {
     console.log(data)
+    // Código de limpeza ou finalização pode ser adicionado aqui
 }

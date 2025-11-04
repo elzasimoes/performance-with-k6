@@ -6,6 +6,7 @@ export const options = {
     duration: '3s'
 }
 
+// Função principal do teste
 export default function () {
     const res = http.get('http://test.k6.io/')
 

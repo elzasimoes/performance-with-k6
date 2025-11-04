@@ -9,19 +9,25 @@ export const options = {
     duration: '3s'
 }
 
-const chamadas = new Counter('quantidade de chamadas');
-const myGauge = new Gauge('Tempo bloqueado');
-const myRate = new Rate('taxa req 200');
-const myTrend = new Trend('taxa de espera');
+// Correção dos nomes das métricas para seguir a convenção de snake_case
+// quantidade de chamadas → quantidade_de_chamadas
+// Tempo bloqueado → tempo_bloqueado
+// taxa req 200 → taxa_req_200
+// taxa de espera → taxa_de_espera
+
+const chamadas = new Counter('quantidade_de_chamadas');
+const myGauge = new Gauge('tempo_bloqueado');
+const myRate = new Rate('taxa_req_200');
+const myTrend = new Trend('taxa_de_espera');
 
 export default function () {
     const req = http.get('http://test.k6.io/');
-    //contador
+    // Contador 
     chamadas.add(1);
-    //medidor
+    // Medidor
     myGauge.add(req.timings.blocked);
-    //taxa
+    // Taxa de sucesso
     myRate.add(req.status === 200);
-    //tendencia
+    // Tendência
     myTrend.add(req.timings.waiting);
 }

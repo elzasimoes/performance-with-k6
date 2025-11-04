@@ -14,6 +14,8 @@ export const options = {
 
 const id = 7;
 
+// as tags podem ser usadas para filtrar as métricas no final do teste
+
 export default function () {
     group('exemple post', function () {
         const res = http.get(`https://test-api.k6.io/public/crocodiles/`, {

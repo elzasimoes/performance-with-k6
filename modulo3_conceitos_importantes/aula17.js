@@ -1,6 +1,11 @@
 import { check, group } from 'k6';
 import http from 'k6/http';
 
+
+// Transação com grupos e limiares
+// Grupos é uma forma de organizar as requisições em blocos lógicos
+// Limiares são metas de desempenho que o teste deve atingir
+
 export const options = {
     vus: 4,
     duration: '5s',

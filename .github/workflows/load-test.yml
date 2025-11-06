@@ -17,7 +17,7 @@ jobs:
       - run: ls & mkdir reports & mv index.html reports/index.html
 
       - name: Upload K6 HTML report artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: k6-html-report
           path: reports

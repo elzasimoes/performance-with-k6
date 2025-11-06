@@ -12,4 +12,4 @@ jobs:
       - name: Run K6 load test
         uses: grafana/k6-action@v0.2.0
         with:
-        filename: modulo5_conteudo_adicional/aula31.js
+          filename: modulo5_conteudo_adicional/aula31.js

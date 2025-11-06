@@ -19,7 +19,6 @@ const data = new SharedArray('ler dados', function () {
 });
 
 export default function(){
-
     const userId = data[Math.floor(Math.random() * data.length)].id;
     const BASE_URL = `https://test-api.k6.io/public/crocodiles/${userId}`;
     const res = http.get(BASE_URL)

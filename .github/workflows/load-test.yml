@@ -18,14 +18,14 @@ jobs:
 
       - run: ls & mkdir reports & mv index.html reports/index.html
 
-      - name: Upload K6 HTML report artifact
+      - name: K6 HTML report artifact
         uses: actions/upload-artifact@v4
         with:
           name: k6-html-report
           path: reports
 
-      - name: Upload K6 JSON report artifact
-        uses: peaceris/actions-gh-pages@v3.2.0
+      - name: Deploy K6 JSON report artifact
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./reports

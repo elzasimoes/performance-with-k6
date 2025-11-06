@@ -1,6 +1,8 @@
 import http from 'k6/http';
 import {sleep, check} from 'k6';
 
+// K6_WEB_DASHBOARD=true k6 run modulo5_conteudo_adicional/aula31.js
+
 export const options = {
     stages: [
         { duration: '10s', target: 10 }, 
